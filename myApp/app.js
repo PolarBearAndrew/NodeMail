@@ -7,6 +7,7 @@ var bodyParser = require('body-parser');
 
 var routes = require('./routes/index');
 var users = require('./routes/users');
+var mail = require('./routes/mail.js');
 
 var app = express();
 
@@ -24,6 +25,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', routes);
 app.use('/users', users);
+app.use('/mail', mail);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
@@ -54,6 +56,12 @@ app.use(function(err, req, res, next) {
         message: err.message,
         error: {}
     });
+});
+
+var port = 8080;
+
+app.listen(port, function(){
+    console.log('server listening on port' + port);
 });
 
 
