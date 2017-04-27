@@ -1,8 +1,14 @@
-##use Nodemailer send email
+## Nodemailer send email
 
-###Get Started
+### Get Started
+
 ```
-$npm start
+npm i
+npm start
+```
+
+send mail by url request
+
+```
 localhost:8080/mail/send
 ```
-nothing will heppend, you need to add your own password in mail.js :")
